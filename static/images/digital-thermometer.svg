@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Digital thermometer</title>
+  <desc id="desc">A white digital thermometer with a temperature reading of 38.6 degrees Celsius.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9f6ff"/>
+      <stop offset="1" stop-color="#f5fbff"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e5eaf0"/>
+      <stop offset=".28" stop-color="#fff"/>
+      <stop offset=".78" stop-color="#fff"/>
+      <stop offset="1" stop-color="#dce3eb"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="12" dy="18" stdDeviation="16" flood-color="#47708e" flood-opacity=".2"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" rx="36" fill="url(#background)"/>
+  <circle cx="636" cy="144" r="82" fill="#d8efff"/>
+  <circle cx="165" cy="460" r="105" fill="#e2f3ff"/>
+  <g transform="rotate(-28 400 300)" filter="url(#shadow)">
+    <rect x="347" y="92" width="106" height="360" rx="50" fill="url(#body)" stroke="#cbd5df" stroke-width="5"/>
+    <rect x="365" y="174" width="70" height="84" rx="10" fill="#19384b"/>
+    <rect x="371" y="180" width="58" height="72" rx="6" fill="#b9eff0"/>
+    <text x="400" y="218" fill="#173847" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">38.6</text>
+    <text x="400" y="240" fill="#315c68" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">°C</text>
+    <rect x="379" y="280" width="42" height="24" rx="12" fill="#d5e0e8" stroke="#bac7d1" stroke-width="2"/>
+    <circle cx="400" cy="292" r="5" fill="#7f95a5"/>
+    <path d="M400 451v65" fill="none" stroke="#aab8c4" stroke-width="10" stroke-linecap="round"/>
+    <path d="M400 509v42" fill="none" stroke="#8799a8" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="400" cy="451" r="8" fill="#b7c4ce"/>
+  </g>
+  <text x="400" y="548" fill="#4a7189" font-family="Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">DIGITAL THERMOMETER</text>
+</svg>

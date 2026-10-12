@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-7">
+        <div class="card p-4">
+
+            <h2>Checkout</h2>
+
+            <form method="post">
+
+                <div class="mb-3">
+                    <label class="form-label">Delivery Address</label>
+                    <textarea name="address" class="form-control" rows="4" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Payment Method</label>
+
+                    <select name="payment_method" class="form-select">
+                        <option value="COD">Cash on Delivery</option>
+                        <option value="Online Demo">Online Payment (Demo)</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-success btn-lg">
+                    Place Order — ₹{{ '%.2f'|format(total) }}
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="col-md-5">
+
+        <div class="card p-4">
+
+            <h4>Order Summary</h4>
+
+            {% for p, q in items %}
+
+            <p>
+                {{ p.name }} × {{ q }}
+
+                <span class="float-end">
+                    ₹{{ '%.2f'|format(p.price|float * q) }}
+                </span>
+            </p>
+
+            {% endfor %}
+
+            <hr>
+
+            <h4>
+                Total ₹{{ '%.2f'|format(total) }}
+            </h4>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

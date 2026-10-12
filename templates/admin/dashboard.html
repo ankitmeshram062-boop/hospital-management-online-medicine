@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">Admin Dashboard</h2>
+
+<div class="row g-3 mb-4">
+
+    {% for label, key, icon in [
+        ('Patients', 'patients', '👥'),
+        ('Doctors', 'doctors', '🩺'),
+        ('Medicines', 'medicines', '💊'),
+        ('Orders', 'orders', '📦')
+    ] %}
+
+    <div class="col-md-3">
+        <div class="card p-4 text-center">
+
+            <div class="display-6">{{ icon }}</div>
+
+            <h5>{{ label }}</h5>
+
+            <h2>{{ stats[key] }}</h2>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+<div class="card p-4">
+
+    <h4>Recent Orders</h4>
+
+    {% if recent %}
+
+    <div class="table-responsive">
+
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User ID</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for order in recent %}
+
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.user_id }}</td>
+                    <td>₹{{ order.total }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.created_at }}</td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <p>No recent orders found.</p>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

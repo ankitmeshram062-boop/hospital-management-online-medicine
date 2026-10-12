@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<div class="row justify-content-center"><div class="col-md-7"><div class="card p-4"><h2>Book Doctor Appointment</h2><form method="post">
+<select class="form-select mb-3" name="doctor_id" required><option value="">Select doctor</option>{% for d in doctors %}<option value="{{d.id}}">{{d.name}} — {{d.specialization}} (₹{{d.fee}})</option>{% endfor %}</select>
+<input class="form-control mb-3" type="date" name="date" required><input class="form-control mb-3" type="time" name="time" required>
+<textarea class="form-control mb-3" name="message" placeholder="Reason / message"></textarea><button class="btn btn-primary">Request Appointment</button></form></div></div></div>{% endblock %}

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">ORS sachets</title>
+  <desc id="desc">Oral rehydration salts sachets with a glass of water.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eaf8f5"/>
+      <stop offset="1" stop-color="#f7fcfa"/>
+    </linearGradient>
+    <linearGradient id="packet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#edf6f3"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b7e8f1" stop-opacity=".74"/>
+      <stop offset="1" stop-color="#70c9df" stop-opacity=".92"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="8" dy="12" stdDeviation="12" flood-color="#4c8177" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" rx="36" fill="url(#background)"/>
+  <circle cx="650" cy="150" r="94" fill="#d8f1e9"/>
+  <circle cx="154" cy="462" r="105" fill="#dff4ee"/>
+  <g filter="url(#shadow)" transform="rotate(-9 318 302)">
+    <rect x="190" y="122" width="235" height="360" rx="18" fill="url(#packet)" stroke="#c9ddd6" stroke-width="4"/>
+    <path d="M200 145h215M200 460h215" stroke="#b4cbc3" stroke-width="5" stroke-dasharray="4 8"/>
+    <path d="M190 178h235v94H190z" fill="#09a987"/>
+    <text x="307" y="231" fill="#fff" font-family="Arial,sans-serif" font-size="47" font-weight="700" text-anchor="middle">ORS</text>
+    <text x="307" y="314" fill="#31584d" font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle">ORAL REHYDRATION</text>
+    <text x="307" y="346" fill="#59776e" font-family="Arial,sans-serif" font-size="18" text-anchor="middle">SALTS</text>
+    <path d="M246 390h122" stroke="#c5ddd5" stroke-width="3"/>
+    <path d="M267 416h80" stroke="#d3e5df" stroke-width="3"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M500 265h145l-15 223q-2 24-25 24h-67q-23 0-25-24z" fill="#fff" fill-opacity=".7" stroke="#9bc9cb" stroke-width="6"/>
+    <path d="M506 365h133l-8 123q-1 12-15 12h-86q-13 0-14-12z" fill="url(#water)"/>
+    <path d="M485 255h174v24H485z" rx="8" fill="#fff" stroke="#9bc9cb" stroke-width="5"/>
+    <path d="M518 244h108" stroke="#82b8bb" stroke-width="8" stroke-linecap="round"/>
+    <path d="M517 389q52 18 111 0" fill="none" stroke="#e6ffff" stroke-width="5" opacity=".9"/>
+  </g>
+  <text x="400" y="555" fill="#4c7b6e" font-family="Arial,sans-serif" font-size="22" font-weight="600" text-anchor="middle">ORAL REHYDRATION SALTS</text>
+</svg>

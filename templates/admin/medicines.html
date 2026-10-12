@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block content %}<h1>Manage Medicines</h1><div class="card p-4 mb-4"><form method="post" class="row g-2">
+<div class="col-md-3"><input class="form-control" name="name" placeholder="Name" required></div><div class="col-md-2"><input class="form-control" name="category" placeholder="Category" required></div>
+<div class="col-md-3"><input class="form-control" name="description" placeholder="Description"></div><div class="col-md-1"><input class="form-control" name="price" type="number" step=".01" placeholder="Price" required></div>
+<div class="col-md-1"><input class="form-control" name="stock" type="number" placeholder="Stock" required></div><div class="col-md-2"><input class="form-control" name="image" placeholder="Image URL"></div>
+<div class="col-12"><button class="btn btn-success">Add Medicine</button></div></form></div>
+<table class="table"><tr><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Action</th></tr>{% for p in products %}<tr><td>{{p.name}}</td><td>{{p.category}}</td><td>₹{{p.price}}</td><td>{{p.stock}}</td><td><a class="btn btn-sm btn-danger confirm-delete" href="{{url_for('admin_medicine_delete',id=p.id)}}">Delete</a></td></tr>{% endfor %}</table>{% endblock %}

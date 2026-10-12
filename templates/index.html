@@ -1,0 +1,15 @@
+{% extends 'base.html' %}{% block title %}MediCare | Home{% endblock %}{% block content %}
+<section class="hero mb-5"><div class="row align-items-center"><div class="col-md-7">
+<span class="badge text-bg-primary mb-3">24×7 Healthcare Platform</span><h1 class="display-5 fw-bold">Healthcare, doctors & medicines in one place.</h1>
+<p class="lead">Book appointments with doctors and order healthcare products through a simple online store.</p>
+<a class="btn btn-primary btn-lg me-2" href="{{url_for('appointment')}}">Book Appointment</a><a class="btn btn-outline-primary btn-lg" href="{{url_for('medicines')}}">Shop Now</a>
+</div><div class="col-md-5 text-center display-1">🏥💊🩺</div></div></section>
+<h2 class="section-title mb-3">Our Services</h2><div class="row g-3 mb-5">
+{% for icon, title, txt in [('🩺','Doctor Consultation','Find doctors by specialization.'),('📅','Appointments','Request an appointment online.'),('💊','Medicine Store','Browse healthcare products.'),('🚚','Order Tracking','View your order status.')] %}
+<div class="col-md-3"><div class="card p-4 h-100"><div class="icon-box">{{icon}}</div><h5>{{title}}</h5><p>{{txt}}</p></div></div>{% endfor %}</div>
+<h2 class="section-title mb-3">Featured Products</h2><div class="row g-4">
+{% for p in products %}<div class="col-md-4 col-lg-3"><div class="card h-100">
+<img src="{{p.image}}" class="product-img" onerror="this.style.display='none'"><div class="card-body">
+<span class="badge text-bg-light">{{p.category}}</span><h5 class="mt-2">{{p.name}}</h5><p class="price">₹{{p.price}}</p>
+<a class="btn btn-primary w-100" href="{{url_for('medicine_detail',id=p.id)}}">View Product</a></div></div></div>{% endfor %}</div>
+{% endblock %}

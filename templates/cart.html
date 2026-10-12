@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}<h1 class="section-title">Shopping Cart</h1>{% if items %}
+<form method="post" action="{{url_for('cart_update')}}"><div class="table-responsive"><table class="table align-middle"><tr><th>Product</th><th>Price</th><th width="140">Qty</th><th>Subtotal</th><th></th></tr>
+{% for x in items %}<tr><td>{{x.product.name}}</td><td>₹{{x.product.price}}</td><td><input class="form-control" type="number" min="0" max="{{x.product.stock}}" name="qty_{{x.product.id}}" value="{{x.qty}}"></td><td>₹{{'%.2f'|format(x.subtotal)}}</td><td><a href="{{url_for('cart_remove',id=x.product.id)}}" class="btn btn-sm btn-outline-danger">Remove</a></td></tr>{% endfor %}
+</table></div><button class="btn btn-outline-primary">Update Cart</button></form><div class="text-end mt-4"><h3>Total: ₹{{'%.2f'|format(total)}}</h3><a class="btn btn-primary btn-lg" href="{{url_for('checkout')}}">Checkout</a></div>
+{% else %}<div class="card p-5 text-center"><h3>Your cart is empty.</h3><a href="{{url_for('medicines')}}" class="btn btn-primary">Shop Medicines</a></div>{% endif %}{% endblock %}
